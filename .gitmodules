@@ -1,0 +1,3 @@
+[submodule "astar_ackermann_planner"]
+	path = astar_ackermann_planner
+	url = https://github.com/melkonyan/astar_ackermann_planner.git
