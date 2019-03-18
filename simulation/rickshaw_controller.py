@@ -30,7 +30,7 @@ def convert_trans_rot_vel_to_steering_angle(lin_vel, ang_vel, wheelbase):
 
 class SteeringController:
 
-    def __init__(self, sample_rate=20, Kp=100, Ki=0.1, Kd=0.05):
+    def __init__(self, sample_rate=20, Kp=10, Ki=0.1, Kd=0.05):
         self.sample_rate = sample_rate
         self.pid = PID(Kp, Ki, Kd, setpoint=0)
         self.steering_sensor = RickshawSteeringSensor()
@@ -84,7 +84,7 @@ class RickshawControlGazebo:
 
     def set_wheels_vel(self, target_lin_vel):
         wheel_p = 2.0 * WHEEL_RADIUS * pi
-        wheel_rot_vel = target_lin_vel / wheel_p * 2
+        wheel_rot_vel = target_lin_vel / wheel_p
         rospy.logdebug('Try setting wheels speed to %.2f', wheel_rot_vel)
         wheels_vel = Float64MultiArray(data=[wheel_rot_vel, wheel_rot_vel,
                                              wheel_rot_vel])
