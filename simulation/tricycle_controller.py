@@ -1,8 +1,8 @@
 #!/usr/bin/python
 """
 A controller that listens to cmd_vel topics and forwards commands to the
-rickshaw model running in gazebo. Model's definition can be found in
-simulation/rickshaw/model.urdf
+tricycle model running in gazebo. Model's definition can be found in
+simulation/tricycle/model.urdf
 """
 import rospy
 
@@ -13,7 +13,7 @@ from threading import Thread
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Float64, Float64MultiArray
 
-from rickshaw_angle_sensor import RickshawSteeringSensor
+from angle_sensor import SteeringAngleSensor
 
 EPS = 1e-04
 WHEEL_RADIUS = 0.25
@@ -33,9 +33,9 @@ class SteeringController:
     def __init__(self, sample_rate=20, Kp=10, Ki=0.1, Kd=0.05):
         self.sample_rate = sample_rate
         self.pid = PID(Kp, Ki, Kd, setpoint=0)
-        self.steering_sensor = RickshawSteeringSensor()
+        self.steering_sensor = SteeringAngleSensor()
         self.steering_pub = rospy.Publisher(
-            '/rickshaw_front_part_controller/command', Float64,
+            '/tricycle_front_part_controller/command', Float64,
             queue_size=10)
         self.target_angle = 0
 
@@ -53,15 +53,15 @@ class SteeringController:
             rate.sleep()
 
 
-class RickshawControlGazebo:
+class TricycleControlGazebo:
 
     def __init__(self):
         self.steering_controller = SteeringController()
 
     def start(self):
-        rospy.init_node('rickshaw_control_gazebo', log_level=rospy.DEBUG)
+        rospy.init_node('tricycle_control_gazebo', log_level=rospy.DEBUG)
         self.wheels_pub = rospy.Publisher(
-            '/rickshaw_wheels_controller/command', Float64MultiArray,
+            '/tricycle_wheels_controller/command', Float64MultiArray,
             queue_size=10)
         rospy.Subscriber('cmd_vel', Twist, self.handle_velocity_command,
                          queue_size=1)
@@ -92,5 +92,5 @@ class RickshawControlGazebo:
 
 
 if __name__ == '__main__':
-    controller = RickshawControlGazebo()
+    controller = TricycleControlGazebo()
     controller.start()

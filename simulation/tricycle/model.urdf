@@ -1,4 +1,4 @@
-<robot name="rickshaw">
+<robot name="tricycle">
   <material name="grey">
     <color rgba="0.8 0.8 0.8 1"/>
   </material>
@@ -22,14 +22,14 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/collisions/bike.stl"
+            filename="package://simulation/tricycle/meshes/collisions/bike.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <visual name="bike_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://simulation/rickshaw/meshes/visuals/bike.stl"
+        <mesh filename="package://simulation/tricycle/meshes/visuals/bike.stl"
               scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
@@ -49,7 +49,7 @@
       <origin rpy="0 0 0" xyz="0    0.046  0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/left_wheel.stl"
+            filename="package://simulation/tricycle/meshes/visuals/left_wheel.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
@@ -57,7 +57,7 @@
       <origin rpy="0 0 0" xyz="0 0.046  0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/left_wheel.stl"
+            filename="package://simulation/tricycle/meshes/visuals/left_wheel.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
@@ -100,7 +100,7 @@
       <origin rpy="0 0 0" xyz="0    -0.004 0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/right_wheel.stl"
+            filename="package://simulation/tricycle/meshes/visuals/right_wheel.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
@@ -108,7 +108,7 @@
       <origin rpy="0 0 0" xyz="0    -0.004 0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/right_wheel.stl"
+            filename="package://simulation/tricycle/meshes/visuals/right_wheel.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
@@ -151,7 +151,7 @@
       <origin rpy="0  0  0" xyz="-0.23003 -0.01038  0.20527"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/collisions/front_part.stl"
+            filename="package://simulation/tricycle/meshes/collisions/front_part.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
@@ -159,7 +159,7 @@
       <origin rpy="0 0 0" xyz="-0.23003 -0.01038 0.20527"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/front_part.stl"
+            filename="package://simulation/tricycle/meshes/visuals/front_part.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
@@ -196,7 +196,7 @@
       <origin rpy="0 0 0" xyz="0    -0.069 0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/wheel_back.stl"
+            filename="package://simulation/tricycle/meshes/visuals/wheel_back.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
@@ -204,7 +204,7 @@
       <origin rpy="0 0 0" xyz="0    -0.069 0"/>
       <geometry>
         <mesh
-            filename="package://simulation/rickshaw/meshes/visuals/wheel_back.stl"
+            filename="package://simulation/tricycle/meshes/visuals/wheel_back.stl"
             scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>

@@ -10,7 +10,7 @@ from sensor_msgs.msg import JointState
 STEERING_JOINT = 'joint_front'
 
 
-class RickshawSteeringSensor:
+class SteeringAngleSensor:
 
     def __init__(self):
         self.latest_sensor_value = 0
@@ -26,7 +26,7 @@ class RickshawSteeringSensor:
             if joint_name == STEERING_JOINT:
                 self.latest_sensor_value = position
                 return
-        rospy.logerr('RickshawSteeringSensor: Could position of the "%s" joint',
+        rospy.logerr('SteeringAngleSensor: Could position of the "%s" joint',
                      STEERING_JOINT)
 
     def get_latest_sensor_value(self):

@@ -11,7 +11,7 @@ of the robot
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="model_urdf"
-       default="$(find simulation)/rickshaw/model.urdf"/>
+       default="$(find simulation)/tricycle/model.urdf"/>
   <arg name="model_name" default="tricycle"/>
   <arg name="model_frame" default="base_link"/>
 
